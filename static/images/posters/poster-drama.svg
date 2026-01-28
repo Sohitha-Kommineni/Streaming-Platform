@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b1b17" />
+      <stop offset="100%" stop-color="#2f9e84" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="600" rx="32" fill="url(#bg)" />
+  <path d="M40 260 C120 200, 220 340, 360 220" stroke="rgba(255,255,255,0.2)" stroke-width="8" fill="none" />
+  <text x="40" y="450" fill="#ffffff" font-size="32" font-family="Manrope, sans-serif" font-weight="700">
+    Dramatic Tides
+  </text>
+  <text x="40" y="490" fill="#d9f7e3" font-size="18" font-family="Manrope, sans-serif">
+    Stories that linger
+  </text>
+</svg>

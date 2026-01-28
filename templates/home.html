@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <section class="hero">
+    <div class="hero-content">
+      <span class="eyebrow">Featured</span>
+      <h1>{{ featured.title }}</h1>
+      <p class="hero-meta">
+        {{ featured.year }} • {{ featured.runtime }} • {{ featured.genres|join:", " }}
+      </p>
+      <p class="hero-description">{{ featured.description }}</p>
+      <div class="hero-actions">
+        <a class="primary-button" href="{% url 'movie_detail' featured.slug %}">Watch Trailer</a>
+        <a class="secondary-button" href="{% url 'movies' %}">Browse All</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      {% if featured.banner|slice:":4" == "http" %}
+        <img src="{{ featured.banner }}" alt="{{ featured.title }} banner" />
+      {% else %}
+        <img src="{% static featured.banner %}" alt="{{ featured.title }} banner" />
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Trending Now</h2>
+      <a href="{% url 'movies' %}">View all</a>
+    </div>
+    <div class="movie-grid">
+      {% for movie in trending %}
+        <article class="movie-card">
+          <a href="{% url 'movie_detail' movie.slug %}">
+            {% if movie.poster|slice:":4" == "http" %}
+              <img src="{{ movie.poster }}" alt="{{ movie.title }} poster" />
+            {% else %}
+              <img src="{% static movie.poster %}" alt="{{ movie.title }} poster" />
+            {% endif %}
+            <div class="movie-info">
+              <h3>{{ movie.title }}</h3>
+              <div class="movie-meta">
+                <span>{{ movie.rating }}</span>
+                <span>{{ movie.genres|join:" • " }}</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  {% for category in categories %}
+    <section class="section">
+      <div class="section-header">
+        <h2>{{ category.name }}</h2>
+        <span class="section-subtle">Curated picks</span>
+      </div>
+      <div class="movie-grid">
+        {% for movie in category.movies %}
+          <article class="movie-card">
+            <a href="{% url 'movie_detail' movie.slug %}">
+              {% if movie.poster|slice:":4" == "http" %}
+                <img src="{{ movie.poster }}" alt="{{ movie.title }} poster" />
+              {% else %}
+                <img src="{% static movie.poster %}" alt="{{ movie.title }} poster" />
+              {% endif %}
+              <div class="movie-info">
+                <h3>{{ movie.title }}</h3>
+                <div class="movie-meta">
+                  <span>{{ movie.rating }}</span>
+                  <span>{{ movie.genres|join:" • " }}</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+  {% endfor %}
+{% endblock %}

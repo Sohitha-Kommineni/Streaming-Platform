@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <section class="page-hero">
+    <div>
+      <h1>Browse Movies</h1>
+      <p>Explore every title on NovaStream with curated genres and ratings.</p>
+    </div>
+    <div class="pill-group">
+      <span>Action</span>
+      <span>Drama</span>
+      <span>Sci-Fi</span>
+      <span>Horror</span>
+      <span>Comedy</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="movie-grid">
+      {% for movie in movies %}
+        <article class="movie-card">
+          <a href="{% url 'movie_detail' movie.slug %}">
+            {% if movie.poster|slice:":4" == "http" %}
+              <img src="{{ movie.poster }}" alt="{{ movie.title }} poster" />
+            {% else %}
+              <img src="{% static movie.poster %}" alt="{{ movie.title }} poster" />
+            {% endif %}
+            <div class="movie-info">
+              <h3>{{ movie.title }}</h3>
+              <div class="movie-meta">
+                <span>{{ movie.rating }}</span>
+                <span>{{ movie.genres|join:" • " }}</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="600" rx="32" fill="url(#bg)" />
+  <rect x="70" y="120" width="260" height="150" rx="22" fill="rgba(255,255,255,0.14)" />
+  <text x="40" y="420" fill="#ffffff" font-size="34" font-family="Manrope, sans-serif" font-weight="700">
+    Quiet Harbor
+  </text>
+  <text x="40" y="460" fill="#cffafe" font-size="18" font-family="Manrope, sans-serif">
+    Drama • Mystery
+  </text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#3f0a2b" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="600" rx="32" fill="url(#bg)" />
+  <path d="M60 140 L340 140 L300 240 L100 240 Z" fill="rgba(255,255,255,0.18)" />
+  <text x="40" y="420" fill="#ffffff" font-size="34" font-family="Manrope, sans-serif" font-weight="700">
+    Neon District
+  </text>
+  <text x="40" y="460" fill="#ffe4ea" font-size="18" font-family="Manrope, sans-serif">
+    Action • Crime
+  </text>
+</svg>
