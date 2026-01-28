@@ -1,7 +1,35 @@
 # Streaming Platform
 
-A Django-based streaming platform demo that shows movie listings and detail pages
-with a simple UI and local data.
+A Django-based streaming platform demo that showcases movie listings, categories,
+and detail pages. It is designed as a clean starter project with server-rendered
+templates, static assets, and local in-memory data for quick setup.
+
+### Structure (Top-Level)
+```
+Streaming Platform/
+├─ manage.py
+├─ db.sqlite3
+├─ movie_streaming/
+│  ├─ settings.py
+│  ├─ urls.py
+│  └─ wsgi.py
+├─ movies/
+│  ├─ data.py
+│  ├─ urls.py
+│  └─ views.py
+├─ templates/
+│  ├─ base.html
+│  ├─ home.html
+│  ├─ movies.html
+│  └─ movie_detail.html
+└─ static/
+   ├─ css/
+   │  └─ styles.css
+   └─ images/
+      ├─ banners/
+      ├─ cast/
+      └─ posters/
+```
 
 ## Features
 - Home page with featured content
@@ -18,6 +46,11 @@ with a simple UI and local data.
 - Home page
 - Movies list
 - Movie detail
+
+## How It Works
+- Routes are defined in `movies/urls.py` and included in the project `urls.py`.
+- Views render templates with data from `movies/data.py`.
+- Static assets are served from the `static/` directory during development.
 
 ## Getting Started (Local)
 1. Create and activate a virtual environment (recommended).
