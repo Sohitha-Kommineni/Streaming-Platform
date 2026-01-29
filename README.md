@@ -3,6 +3,9 @@
 A Django-based streaming platform demo that showcases movie listings, categories,
 and detail pages. It is designed as a clean starter project with server-rendered
 templates, static assets, and local in-memory data for quick setup.
+<p align="center">
+  <img src="overview%20image.png" alt="Streaming Platform Overview" width="600">
+</p>
 
 ### Structure (Top-Level)
 ```
